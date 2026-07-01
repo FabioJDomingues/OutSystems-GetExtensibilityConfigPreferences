@@ -1,0 +1,23 @@
+{
+  "name": "cordova-plugin-extensibility-preferences",
+  "version": "1.0.0",
+  "description": "Reads Cordova config.xml preferences set via OutSystems Extensibility Configurations",
+  "cordova": {
+    "id": "cordova-plugin-extensibility-preferences",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "keywords": [
+    "cordova",
+    "cordova-android",
+    "cordova-ios",
+    "ecosystem:cordova",
+    "outsystems",
+    "preferences",
+    "config"
+  ],
+  "author": "",
+  "license": "Apache-2.0"
+}

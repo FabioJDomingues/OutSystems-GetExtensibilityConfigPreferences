@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="cordova-plugin-extensibility-preferences"
+        version="1.0.0"
+        xmlns="http://apache.org/cordova/ns/plugins/1.0">
+
+    <name>Extensibility Preferences</name>
+    <description>Reads Cordova config.xml preferences set via OutSystems Extensibility Configurations</description>
+    <license>Apache-2.0</license>
+
+    <js-module src="www/extensibility-preferences.js" name="ExtensibilityPreferences">
+        <clobbers target="ExtensibilityPreferences" />
+    </js-module>
+
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="ExtensibilityPreferences">
+                <param name="android-package"
+                       value="com.outsystems.extensibility.ExtensibilityPreferencesPlugin" />
+            </feature>
+        </config-file>
+        <source-file src="src/android/ExtensibilityPreferencesPlugin.java"
+                     target-dir="src/com/outsystems/extensibility" />
+    </platform>
+
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="ExtensibilityPreferences">
+                <param name="ios-package" value="ExtensibilityPreferencesPlugin" />
+            </feature>
+        </config-file>
+        <header-file src="src/ios/ExtensibilityPreferencesPlugin.h" />
+        <source-file src="src/ios/ExtensibilityPreferencesPlugin.m" />
+    </platform>
+
+</plugin>
