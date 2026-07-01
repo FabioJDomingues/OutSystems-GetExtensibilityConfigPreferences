@@ -1,13 +1,8 @@
 // Client Action: GetPreferences
 // Input:  Keys (Text) — comma-separated preference names, e.g. "NewBranding,EnableBetaFeatures"
-// Output: ValuesJSON (Text) — JSON object string, e.g. '{"NewBranding":"true"}'
+// Output: preferences (JSON Object) — JSON object
 
-$parameters.ValuesJSON = '{}';
-
-if (typeof ExtensibilityPreferences === 'undefined') {
-    $resolve();
-    return;
-}
+let preferences = {};
 
 var keys = $parameters.Keys
     .split(',')
@@ -22,7 +17,7 @@ if (keys.length === 0) {
 ExtensibilityPreferences.get(
     keys,
     function (result) {
-        $parameters.ValuesJSON = JSON.stringify(result || {});
+        preferences = result || {};
         $resolve();
     },
     function () {
