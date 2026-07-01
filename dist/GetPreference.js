@@ -1,6 +1,6 @@
 // Client Action: GetPreference
 // Input:  Key (Text)
-// Output: Value (Text)
+// Output: preferenceValue (Text)
 
 let preferenceValue = '';
 
