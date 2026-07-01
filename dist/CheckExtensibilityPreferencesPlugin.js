@@ -1,4 +1,4 @@
 // Client Action: CheckExtensibilityPreferencesPlugin
 // Output: IsAvailable (Boolean)
 
-$parameters.IsAvailable = typeof ExtensibilityPreferences !== 'undefined';
+let isAvailable = typeof ExtensibilityPreferences !== 'undefined';
